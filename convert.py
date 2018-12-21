@@ -85,13 +85,6 @@ def parse_rst(lines):
         buffer.append(prev_line)
     yield from flush_buffer()
 
-SHEET_HEAD = """\
-#################################
-RSt cheat sheet for Markdown fans
-#################################
-
-"""
-
 TABLE_HEAD = """\
 
 .. list-table::
@@ -126,7 +119,9 @@ def combine(mdlines, rstlines):
     mddata = parse_md(mdlines)
     rstdata = parse_rst(rstlines)
 
-    yield SHEET_HEAD
+    with open("sheet_head.rst") as fhead:
+        yield fhead.read()
+
     h3 = None
     for (mtype, mtext), (rtype, rtext) in zip(mddata, rstdata):
         # print(repr([mtype, mtext, rtype, rtext]))
