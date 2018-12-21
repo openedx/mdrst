@@ -10,11 +10,15 @@
 
 **emphasis**
 
-### Lists
+## Lists
+
+### Numbered
 
 1. First ordered list item
 1. Another item
 1. Actual numbers don't matter
+
+### Bullets
 
 * First unordered list item
 * Another item

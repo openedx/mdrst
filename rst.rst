@@ -15,12 +15,19 @@ Strong emphasis
 
 **emphasis**
 
+
 Lists
-=====
+*****
+
+Numbered
+========
 
 #. First ordered list item
 #. Another item
 #. Actual numbers don't matter
+
+Bullets
+=======
 
 * First unordered list item
 * Another item
@@ -70,4 +77,3 @@ Fourth Header
 -------------
 
 .. parse-headers-on
-
