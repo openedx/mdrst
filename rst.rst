@@ -24,14 +24,14 @@ Numbered
 
 #. First ordered list item
 #. Another item
-#. Actual numbers don't matter
+#. Use hash marks for numbers
 
 Bullets
 =======
 
 * First unordered list item
 * Another item
-* And another item.
+* And another item
 
 
 Links
@@ -45,12 +45,14 @@ URLs make links: http://python.org.
 Inline
 ======
 
-`Inline link <http://python.org>`__ for brevity.
+`Inline link <http://python.org>`__
+for brevity.
 
 Indirect
 ========
 
-`Indirect link`_ for readability.
+`Indirect link`_
+for readability.
 
 .. _Indirect link: http://python.org
 

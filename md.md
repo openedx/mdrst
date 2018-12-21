@@ -22,7 +22,7 @@
 
 * First unordered list item
 * Another item
-* And another item.
+* And another item
 
 
 ## Links
@@ -33,11 +33,13 @@
 
 ### Inline
 
-[Inline link](http://python.org) for brevity.
+[Inline link](http://python.org)
+for brevity.
 
 ### Indirect
 
-[Indirect link][indirect] for readability.
+[Indirect link][indirect]
+for readability.
 
 [indirect]: http://python.org
 

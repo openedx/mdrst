@@ -64,7 +64,7 @@ Lists
 
           #. First ordered list item
           #. Another item
-          #. Actual numbers don't matter
+          #. Use hash marks for numbers
 
      - 
 
@@ -74,13 +74,13 @@ Lists
 
           * First unordered list item
           * Another item
-          * And another item.
+          * And another item
 
      - ::
 
           * First unordered list item
           * Another item
-          * And another item.
+          * And another item
 
      - 
 
@@ -113,11 +113,13 @@ Links
    * - Inline
      - ::
 
-          [Inline link](http://python.org) for brevity.
+          [Inline link](http://python.org)
+          for brevity.
 
      - ::
 
-          `Inline link <http://python.org>`__ for brevity.
+          `Inline link <http://python.org>`__
+          for brevity.
 
      - 
 
@@ -125,13 +127,15 @@ Links
    * - Indirect
      - ::
 
-          [Indirect link][indirect] for readability.
+          [Indirect link][indirect]
+          for readability.
 
           [indirect]: http://python.org
 
      - ::
 
-          `Indirect link`_ for readability.
+          `Indirect link`_
+          for readability.
 
           .. _Indirect link: http://python.org
 
