@@ -11,14 +11,25 @@ import docutils.core
 from docutils.writers.html4css1 import Writer, HTMLTranslator
 import markdown2
 
-def parse_md(lines):
-    buffer = []
+class Buffer:
+    def __init__(self):
+        self.buffer = []
 
-    def flush_buffer():
-        buffered = "".join(buffer).strip()
+    def append(self, text):
+        self.buffer.append(text)
+
+    def clear(self):
+        self.buffer = []
+
+    def flush(self):
+        buffered = "".join(self.buffer).strip()
         if buffered:
             yield ("text", buffered)
+        self.clear()
 
+
+def parse_md(lines):
+    buffer = Buffer()
     parsing_headers = True
 
     for line in lines:
@@ -35,22 +46,16 @@ def parse_md(lines):
             if header_match:
                 is_header = True
         if is_header:
-            yield from flush_buffer()
+            yield from buffer.flush()
             hashes, text = header_match.groups()
             yield (f"h{len(hashes)}", text)
-            buffer = []
         else:
             buffer.append(line)
-    yield from flush_buffer()
+    yield from buffer.flush()
 
 
 def parse_rst(lines):
-    buffer = []
-
-    def flush_buffer():
-        buffered = "".join(buffer).strip()
-        if buffered:
-            yield ("text", buffered)
+    buffer = Buffer()
 
     prev_line = None
     rules = {}
@@ -74,9 +79,9 @@ def parse_rst(lines):
                 rules[char] = len(rules) + 1
             level = rules[char]
             if level != 1:
-                yield from flush_buffer()
+                yield from buffer.flush()
+            buffer.clear()
             yield (f"h{level}", prev_line.rstrip())
-            buffer = []
             prev_line = None
         else:
             if prev_line:
@@ -85,7 +90,7 @@ def parse_rst(lines):
 
     if prev_line:
         buffer.append(prev_line)
-    yield from flush_buffer()
+    yield from buffer.flush()
 
 TABLE_HEAD = """\
 
@@ -128,7 +133,7 @@ def combine(mdlines, rstlines):
     for (mtype, mtext), (rtype, rtext) in zip(mddata, rstdata):
         # print(repr([mtype, mtext, rtype, rtext]))
         if mtype != rtype:
-            raise Exception(f"Token mismatch: {mtype} vs {rtype}")
+            raise Exception(f"Token mismatch: {mtype} vs {rtype}: {mtext!r} vs {rtext!r}")
         if rtype == "h1":
             continue
         if rtype == "h2":
