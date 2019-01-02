@@ -36,6 +36,7 @@ Basic Stuff
      - 
 
 
+
    * - Strong emphasis
      - ::
 
@@ -46,6 +47,7 @@ Basic Stuff
           **emphasis**
 
      - 
+
 
 
 Lists
@@ -77,6 +79,7 @@ Lists
      - 
 
 
+
    * - Bullets
      - ::
 
@@ -91,6 +94,7 @@ Lists
           * And another item
 
      - 
+
 
 
 Links
@@ -109,7 +113,7 @@ Links
    * - URLs
      - ::
 
-          (URLs don't automatically link.)
+          (none)
 
      - ::
 
@@ -117,6 +121,8 @@ Links
 
      - 
 
+          Markdown doesn't auto-link URLs.
+          URLs are auto-linked in RST.
 
    * - Inline
      - ::
@@ -130,6 +136,7 @@ Links
           for brevity.
 
      - 
+
 
 
    * - Indirect
@@ -148,6 +155,7 @@ Links
           .. _Indirect link: http://python.org
 
      - 
+
 
 
 Headers
@@ -190,5 +198,6 @@ Headers
           -------------
 
      - 
+
 
 

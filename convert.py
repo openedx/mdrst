@@ -49,6 +49,9 @@ def parse_md(lines):
             yield from buffer.flush()
             hashes, text = header_match.groups()
             yield (f"h{len(hashes)}", text)
+        elif "<!-- note:" in line:
+            note = line.strip().strip("-!><").partition(":")[-1].strip()
+            yield ("note", note)
         else:
             buffer.append(line)
     yield from buffer.flush()
@@ -83,6 +86,8 @@ def parse_rst(lines):
             buffer.clear()
             yield (f"h{level}", prev_line.rstrip())
             prev_line = None
+        elif ".. note::" in line:
+            yield ("note", line.partition('::')[-1].strip())
         else:
             if prev_line:
                 buffer.append(prev_line)
@@ -115,49 +120,79 @@ ROW_FORMAT = """\
 
 {rst}
 
-     - 
+     -
 
+{notes}
 """
 
-ROW_CODE_INDENT = 10
+ROW_INDENT = 10
+
+def row_indented(text):
+    return textwrap.indent(text, prefix=" " * ROW_INDENT)
+
+
+def sections(parsed_data):
+    """Convert a stream of parsed tokens into sections with text and notes.
+
+    Yields a stream of:
+        ('h-level', 'header text', 'text', 'notes')
+
+    """
+    header = None
+    text = []
+    notes = []
+    for ttype, ttext in parsed_data:
+        if ttype.startswith('h'):
+            if header:
+                yield (*header, "\n".join(text), "\n".join(notes))
+            text = []
+            notes = []
+            header = (ttype, ttext)
+        elif ttype == "text":
+            text.append(ttext)
+        elif ttype == "note":
+            notes.append(ttext)
+        else:
+            raise Exception(f"Don't know ttype {ttype!r}")
+    yield (*header, "\n".join(text), "\n".join(notes))
 
 
 def combine(mdlines, rstlines):
-    mddata = parse_md(mdlines)
-    rstdata = parse_rst(rstlines)
+    """Combine md lines and rst lines into a comparison sheet.
+
+    Yields text chunks.
+
+    """
+    msections = sections(parse_md(mdlines))
+    rsections = sections(parse_rst(rstlines))
 
     with open("sheet_head.rst") as fhead:
         yield fhead.read()
 
-    h3 = None
-    for (mtype, mtext), (rtype, rtext) in zip(mddata, rstdata):
+    for (mh, mhtext, mtext, mnotes), (rh, rhtext, rtext, rnotes) in zip(msections, rsections):
         # print(repr([mtype, mtext, rtype, rtext]))
-        if mtype != rtype:
-            raise Exception(f"Token mismatch: {mtype} vs {rtype}: {mtext!r} vs {rtext!r}")
-        if rtype == "h1":
+        if mh != rh:
+            raise Exception(f"Header mismatch: {mh} vs {rh}: {mhtext!r} vs {rhtext!r}")
+        if rh == "h1":
+            # H1 is for the document titles, which differ.
             continue
-        if rtype == "h2":
-            if mtext != rtext:
-                raise Exception(f"Mismatched headers: {mtext!r} vs {rtext!r}")
-            yield mtext
-            yield "*" * len(mtext)
+        if mhtext != rhtext:
+            raise Exception(f"Mismatched headers: {mhtext!r} vs {rhtext!r}")
+        if rh == "h2":
+            yield mhtext
+            yield "*" * len(mhtext)
             yield TABLE_HEAD
-        elif rtype == "h3":
-            if mtext != rtext:
-                raise Exception(f"Mismatched headers: {mtext!r} vs {rtext!r}")
-            assert h3 is None
-            h3 = rtext
-        else:
-            assert rtype == "text", f"Expected text, got {rtype}"
-            assert h3 is not None
-            code_indent = " " * ROW_CODE_INDENT
+        elif rh == "h3":
+            notes = (mnotes + "\n" + rnotes).strip()
             yield ROW_FORMAT.format(
-                h3=h3,
-                md=textwrap.indent(mtext, prefix=code_indent),
-                rst=textwrap.indent(rtext, prefix=code_indent),
+                h3=rhtext,
+                md=row_indented(mtext),
+                rst=row_indented(rtext),
+                notes=row_indented(notes),
                 )
-            h3 = None
-            
+        else:
+            raise Exception(f"Surprising header: {rh!r}: {rhtext!r}")
+
 MD_SOURCE = "md.md"
 RST_SOURCE = "rst.rst"
 
@@ -187,8 +222,11 @@ def make_rst(rst_filename, html_filename):
         with open(html_filename, "wb") as htmlfile:
             htmlfile.write(rst_to_html(rstfile.read()))
 
-if __name__ == "__main__":
+def main():
     make_md(MD_SOURCE, "md.html")
     make_rst(RST_SOURCE, "rst.html")
     make_comparison(MD_SOURCE, RST_SOURCE, "mdrst.rst")
     make_rst("mdrst.rst", "mdrst.html")
+
+if __name__ == "__main__":
+    main()

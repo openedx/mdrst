@@ -29,7 +29,9 @@
 
 ### URLs
 
-(URLs don't automatically link.)
+<!-- note: Markdown doesn't auto-link URLs. -->
+
+(none)
 
 ### Inline
 
