@@ -33,7 +33,7 @@ Basic Stuff
 
           *emphasis*
 
-     - 
+     -
 
 
 
@@ -46,7 +46,7 @@ Basic Stuff
 
           **emphasis**
 
-     - 
+     -
 
 
 
@@ -76,7 +76,7 @@ Lists
           #. Another item
           #. Use hash marks for numbers
 
-     - 
+     -
 
 
 
@@ -93,7 +93,7 @@ Lists
           * Another item
           * And another item
 
-     - 
+     -
 
 
 
@@ -119,7 +119,7 @@ Links
 
           URLs make links: http://python.org.
 
-     - 
+     -
 
           Markdown doesn't auto-link URLs.
           URLs are auto-linked in RST.
@@ -135,7 +135,7 @@ Links
           `Inline link <http://python.org>`__
           for brevity.
 
-     - 
+     -
 
 
 
@@ -154,7 +154,7 @@ Links
 
           .. _Indirect link: http://python.org
 
-     - 
+     -
 
 
 
@@ -197,7 +197,7 @@ Headers
           Fourth Header
           -------------
 
-     - 
+     -
 
 
 

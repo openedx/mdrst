@@ -86,8 +86,8 @@ def parse_rst(lines):
             buffer.clear()
             yield (f"h{level}", prev_line.rstrip())
             prev_line = None
-        elif ".. note::" in line:
-            yield ("note", line.partition('::')[-1].strip())
+        elif ".. note:" in line:
+            yield ("note", line.partition(':')[-1].strip())
         else:
             if prev_line:
                 buffer.append(prev_line)
