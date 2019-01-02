@@ -24,6 +24,13 @@
 * Another item
 * And another item
 
+### Nested
+
+1. First outer
+   * First inner
+   * Second inner
+2. Second outer
+3. Third outer
 
 ## Links
 

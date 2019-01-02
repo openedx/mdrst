@@ -33,6 +33,18 @@ Bullets
 * Another item
 * And another item
 
+Nested
+======
+
+.. note: RST needs blank lines around the inner list.
+
+#. First outer
+
+   * First inner
+   * Second inner
+
+#. Second outer
+#. Third outer
 
 Links
 *****

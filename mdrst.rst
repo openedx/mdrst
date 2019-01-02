@@ -97,6 +97,29 @@ Lists
 
 
 
+   * - Nested
+     - ::
+
+          1. First outer
+             * First inner
+             * Second inner
+          2. Second outer
+          3. Third outer
+
+     - ::
+
+          #. First outer
+
+             * First inner
+             * Second inner
+
+          #. Second outer
+          #. Third outer
+
+     -
+
+          RST needs blank lines around the inner list.
+
 Links
 *****
 
