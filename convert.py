@@ -7,6 +7,8 @@ import pprint
 import re
 import textwrap
 
+import docutils.core
+from docutils.writers.html4css1 import Writer, HTMLTranslator
 import markdown2
 
 def parse_md(lines):
@@ -170,13 +172,9 @@ def make_md(md_filename, html_filename):
             htmlfile.write(markdown2.markdown(mdfile.read()))
 
 def rst_to_html(rst):
-    from docutils import core
-    from docutils.writers.html4css1 import Writer,HTMLTranslator
-
     html_fragment_writer = Writer()
     html_fragment_writer.translator_class = HTMLTranslator
-
-    return core.publish_string(rst, writer = html_fragment_writer)
+    return docutils.core.publish_string(rst, writer=html_fragment_writer)
 
 def make_rst(rst_filename, html_filename):
     print(f"Converting ReST: {rst_filename} -> {html_filename}")
