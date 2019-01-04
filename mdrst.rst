@@ -27,11 +27,11 @@ Basic Stuff
    * - Emphasis
      - ::
 
-          *emphasis*
+          This word is *italicized*.
 
      - ::
 
-          *emphasis*
+          This word is *italicized*.
 
      -
 
@@ -40,11 +40,11 @@ Basic Stuff
    * - Strong emphasis
      - ::
 
-          **emphasis**
+          This word is **bold**.
 
      - ::
 
-          **emphasis**
+          This word is **bold**.
 
      -
 

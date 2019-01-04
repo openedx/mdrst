@@ -8,12 +8,12 @@ Basic Stuff
 Emphasis
 ========
 
-*emphasis*
+This word is *italicized*.
 
 Strong emphasis
 ===============
 
-**emphasis**
+This word is **bold**.
 
 Code inline
 ===========
