@@ -103,6 +103,8 @@ Headers
 
 .. parse-headers-off
 
+.. note: The overlines in RST are optional and characters are flexible as long as they are consistent.
+
 ############
 First Header
 ############
