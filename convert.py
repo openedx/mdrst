@@ -157,6 +157,17 @@ def sections(parsed_data):
     yield (*header, "\n".join(text), "\n".join(notes))
 
 
+SCARE_COMMENT = """
+.. Don't edit this file directly.  It's created from four parts:
+..      sheet_head.rst is the first content
+..      md.md is a Markdown file parsed for content to go in the table.
+..      rst.rst is an RST file parsed for content to go in the table.
+..      sheet_foot.rst is the final content
+..
+.. See the README.rst for instructions.
+
+"""
+
 def combine(mdlines, rstlines):
     """Combine md lines and rst lines into a comparison sheet.
 
@@ -166,6 +177,7 @@ def combine(mdlines, rstlines):
     msections = sections(parse_md(mdlines))
     rsections = sections(parse_rst(rstlines))
 
+    yield SCARE_COMMENT
     with open("sheet_head.rst") as fhead:
         yield fhead.read()
 

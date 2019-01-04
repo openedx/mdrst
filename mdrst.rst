@@ -1,3 +1,13 @@
+
+.. Don't edit this file directly.  It's created from four parts:
+..      sheet_head.rst is the first content
+..      md.md is a Markdown file parsed for content to go in the table.
+..      rst.rst is an RST file parsed for content to go in the table.
+..      sheet_foot.rst is the final content
+..
+.. See the README.rst for instructions.
+
+
 #################################
 RST cheat sheet for Markdown fans
 #################################
