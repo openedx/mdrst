@@ -2,14 +2,13 @@
 RST cheat sheet for Markdown fans
 #################################
 
-This is a comparison of Markdown and ReStructured Text to help people
-authoring or editing RST files.
+This cheatsheet provides a quick reference for translating
+Markdown to ReStructured Text (RST) to help someone author or edit
+RST files. 
 
 You can look at the `original Markdown file <md.md>`_ and the
 `original RST file <rst.rst>`_ that the examples were culled from
 to see the formatting as GitHub presents it.
-
-
 
 Basic Stuff
 ***********
@@ -282,7 +281,7 @@ Headers
           Fourth Header
           -------------
 
-     -
+     -  The overlines in RST are optional and characters are flexible as long as they are consistent.
 
 
 
@@ -311,5 +310,9 @@ Images
 
      -
 
+Additional Resources
+********************
 
+RST also has many more features.  Check out the official `RST User Documentation`_.
 
+.. _RST User Documentation: http://docutils.sourceforge.net/rst.html
