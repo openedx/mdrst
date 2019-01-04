@@ -31,6 +31,14 @@ Look at this code::
         else:
             return fib(n-1) + fib(n-2)
 
+Blockquotes
+===========
+
+Lincoln said:
+
+   Four-score and seven years ago, our fathers brought forth
+   on this continent a new nation, conceived in liberty...
+
 
 Lists
 *****

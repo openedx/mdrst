@@ -90,6 +90,25 @@ Basic Stuff
 
 
 
+   * - Blockquotes
+     - ::
+
+          Lincoln said:
+
+          > Four-score and seven years ago, our fathers brought forth
+          > on this continent a new nation, conceived in liberty...
+
+     - ::
+
+          Lincoln said:
+
+             Four-score and seven years ago, our fathers brought forth
+             on this continent a new nation, conceived in liberty...
+
+     -
+
+
+
 Lists
 *****
 
@@ -279,7 +298,7 @@ Images
    * - Images
      - ::
 
-          ![Image of Xsy](xsy_150.png "Title is Xsy")
+          ![Image of Xsy](xsy_150.png)
 
      - ::
 
