@@ -205,11 +205,26 @@ def make_comparison(md_filename, rst_filename, output_filename):
                     out.write(text)
                     out.write("\n")
 
+def md_to_html(md_text):
+    """Convert Markdown, using GitHub-like options."""
+    # I copied this monstrosity from: https://github.com/trentm/python-markdown2/wiki/link-patterns#converting-links-into-links-automatically
+    link_patterns = [
+        (re.compile(r'((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+(:[0-9]+)?|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)'),
+            r'\1'
+            ),
+        ]
+    html_text = markdown2.markdown(
+        md_text,
+        extras=['fenced-code-blocks', 'link-patterns'],
+        link_patterns=link_patterns,
+        )
+    return html_text
+
 def make_md(md_filename, html_filename):
     print(f"Converting markdown: {md_filename} -> {html_filename}")
     with open(md_filename) as mdfile:
         with open(html_filename, "w") as htmlfile:
-            htmlfile.write(markdown2.markdown(mdfile.read()))
+            htmlfile.write(md_to_html(mdfile.read()))
 
 def rst_to_html(rst):
     html_fragment_writer = Writer()

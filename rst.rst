@@ -68,8 +68,6 @@ Links
 URLs
 ====
 
-.. note: URLs are auto-linked in RST.
-
 URLs make links: http://python.org.
 
 Inline

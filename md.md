@@ -52,9 +52,9 @@ def fib(n):
 
 ### URLs
 
-<!-- note: Markdown doesn't auto-link URLs. -->
+<!-- note: Classic Markdown doesn't auto-link URLs. -->
 
-(none)
+URLs make links: http://python.org.
 
 ### Inline
 

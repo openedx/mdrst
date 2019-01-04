@@ -176,7 +176,7 @@ Links
    * - URLs
      - ::
 
-          (none)
+          URLs make links: http://python.org.
 
      - ::
 
@@ -184,8 +184,7 @@ Links
 
      -
 
-          Markdown doesn't auto-link URLs.
-          URLs are auto-linked in RST.
+          Classic Markdown doesn't auto-link URLs.
 
    * - Inline
      - ::
