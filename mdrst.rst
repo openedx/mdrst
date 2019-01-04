@@ -263,3 +263,30 @@ Headers
 
 
 
+Images
+******
+
+.. list-table::
+   :widths: 15 30 30 15
+   :header-rows: 1
+
+   * - What
+     - Markdown
+     - reStructuredText
+     - Notes
+
+
+   * - Images
+     - ::
+
+          ![Image of Xsy](xsy_150.png "Title is Xsy")
+
+     - ::
+
+          .. image:: xsy_150.png
+             :alt: Image of Xsy
+
+     -
+
+
+

@@ -107,3 +107,13 @@ Fourth Header
 -------------
 
 .. parse-headers-on
+
+
+Images
+******
+
+Images
+======
+
+.. image:: xsy_150.png
+   :alt: Image of Xsy
