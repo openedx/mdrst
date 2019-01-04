@@ -205,6 +205,10 @@ def combine(mdlines, rstlines):
         else:
             raise Exception(f"Surprising header: {rh!r}: {rhtext!r}")
 
+    with open("sheet_foot.rst") as fhead:
+        yield fhead.read()
+
+
 MD_SOURCE = "md.md"
 RST_SOURCE = "rst.rst"
 
