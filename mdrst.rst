@@ -50,6 +50,46 @@ Basic Stuff
 
 
 
+   * - Code inline
+     - ::
+
+          Call the `function_name` function.
+
+     - ::
+
+          Call the ``function_name`` function.
+
+     -
+
+
+
+   * - Code blocks
+     - ::
+
+          Look at this code:
+
+          ```
+          def fib(n):
+              if n <= 2:
+                  return 1
+              else:
+                  return fib(n-1) + fib(n-2)
+          ```
+
+     - ::
+
+          Look at this code::
+
+              def fib(n):
+                  if n <= 2:
+                      return 1
+                  else:
+                      return fib(n-1) + fib(n-2)
+
+     -
+
+
+
 Lists
 *****
 
