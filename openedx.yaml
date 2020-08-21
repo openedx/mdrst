@@ -2,8 +2,7 @@
 # http://open-edx-proposals.readthedocs.io/en/latest/oep-0002-bp-repo-metadata.html#specification
 
 oeps:
-  oep-2: true
-  oep-7: true
-owner: nedbat
+    oep-2: true
+    oep-7: true
 tags:
-  - backend-tooling
+    - backend-tooling
