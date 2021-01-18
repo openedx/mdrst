@@ -3,13 +3,13 @@
 Convert md.md and rst.rst into useful output and comparisons.
 """
 
-import pprint
 import re
 import textwrap
 
 import docutils.core
-from docutils.writers.html4css1 import Writer, HTMLTranslator
 import markdown2
+from docutils.writers.html4css1 import Writer, HTMLTranslator
+
 
 class Buffer:
     def __init__(self):
@@ -24,7 +24,7 @@ class Buffer:
     def flush(self):
         buffered = "".join(self.buffer).strip()
         if buffered:
-            yield ("text", buffered)
+            yield "text", buffered
         self.clear()
 
 
@@ -48,10 +48,10 @@ def parse_md(lines):
         if is_header:
             yield from buffer.flush()
             hashes, text = header_match.groups()
-            yield (f"h{len(hashes)}", text)
+            yield f"h{len(hashes)}", text
         elif "<!-- note:" in line:
             note = line.strip().strip("-!><").partition(":")[-1].strip()
-            yield ("note", note)
+            yield "note", note
         else:
             buffer.append(line)
     yield from buffer.flush()
@@ -97,6 +97,7 @@ def parse_rst(lines):
         buffer.append(prev_line)
     yield from buffer.flush()
 
+
 TABLE_HEAD = """\
 
 .. list-table::
@@ -127,6 +128,7 @@ ROW_FORMAT = """\
 
 ROW_INDENT = 10
 
+
 def row_indented(text):
     return textwrap.indent(text, prefix=" " * ROW_INDENT)
 
@@ -144,7 +146,7 @@ def sections(parsed_data):
     for ttype, ttext in parsed_data:
         if ttype.startswith('h'):
             if header:
-                yield (*header, "\n".join(text), "\n".join(notes))
+                yield *header, "\n".join(text), "\n".join(notes)
             text = []
             notes = []
             header = (ttype, ttext)
@@ -154,7 +156,7 @@ def sections(parsed_data):
             notes.append(ttext)
         else:
             raise Exception(f"Don't know ttype {ttype!r}")
-    yield (*header, "\n".join(text), "\n".join(notes))
+    yield *header, "\n".join(text), "\n".join(notes)
 
 
 SCARE_COMMENT = """
@@ -167,6 +169,7 @@ SCARE_COMMENT = """
 .. See the README.rst for instructions.
 
 """
+
 
 def combine(mdlines, rstlines):
     """Combine md lines and rst lines into a comparison sheet.
@@ -201,7 +204,7 @@ def combine(mdlines, rstlines):
                 md=row_indented(mtext),
                 rst=row_indented(rtext),
                 notes=row_indented(notes),
-                )
+            )
         else:
             raise Exception(f"Surprising header: {rh!r}: {rhtext!r}")
 
@@ -212,6 +215,7 @@ def combine(mdlines, rstlines):
 MD_SOURCE = "md.md"
 RST_SOURCE = "rst.rst"
 
+
 def make_comparison(md_filename, rst_filename, output_filename):
     print(f"Making comparison: {md_filename} + {rst_filename} -> {output_filename}")
     with open(output_filename, "w") as out:
@@ -221,20 +225,23 @@ def make_comparison(md_filename, rst_filename, output_filename):
                     out.write(text)
                     out.write("\n")
 
+
 def md_to_html(md_text):
     """Convert Markdown, using GitHub-like options."""
-    # I copied this monstrosity from: https://github.com/trentm/python-markdown2/wiki/link-patterns#converting-links-into-links-automatically
+    # I copied this monstrosity from: https://github.com/trentm/python-markdown2/wiki/link-patterns#converting-links
+    # -into-links-automatically
     link_patterns = [
-        (re.compile(r'((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+(:[0-9]+)?|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)'),
-            r'\1'
-            ),
-        ]
+        (re.compile(
+            r'((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+(:[0-9]+)?|(?:www\.|[\-;:&=\+\$,\w]+@)'
+            r'[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)'), r'\1'),
+    ]
     html_text = markdown2.markdown(
         md_text,
         extras=['fenced-code-blocks', 'link-patterns'],
         link_patterns=link_patterns,
-        )
+    )
     return html_text
+
 
 def make_md(md_filename, html_filename):
     print(f"Converting markdown: {md_filename} -> {html_filename}")
@@ -242,10 +249,12 @@ def make_md(md_filename, html_filename):
         with open(html_filename, "w") as htmlfile:
             htmlfile.write(md_to_html(mdfile.read()))
 
+
 def rst_to_html(rst):
     html_fragment_writer = Writer()
     html_fragment_writer.translator_class = HTMLTranslator
     return docutils.core.publish_string(rst, writer=html_fragment_writer)
+
 
 def make_rst(rst_filename, html_filename):
     print(f"Converting ReST: {rst_filename} -> {html_filename}")
@@ -253,11 +262,13 @@ def make_rst(rst_filename, html_filename):
         with open(html_filename, "wb") as htmlfile:
             htmlfile.write(rst_to_html(rstfile.read()))
 
+
 def main():
     make_md(MD_SOURCE, "md.html")
     make_rst(RST_SOURCE, "rst.html")
     make_comparison(MD_SOURCE, RST_SOURCE, "mdrst.rst")
     make_rst("mdrst.rst", "mdrst.html")
+
 
 if __name__ == "__main__":
     main()
