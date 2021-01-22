@@ -228,8 +228,7 @@ def make_comparison(md_filename, rst_filename, output_filename):
 
 def md_to_html(md_text):
     """Convert Markdown, using GitHub-like options."""
-    # I copied this monstrosity from: https://github.com/trentm/python-markdown2/wiki/link-patterns#converting-links
-    # -into-links-automatically
+    # I copied this monstrosity from: https://github.com/trentm/python-markdown2/wiki/link-patterns#converting-links-into-links-automatically
     link_patterns = [
         (re.compile(
             r'((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+(:[0-9]+)?|(?:www\.|[\-;:&=\+\$,\w]+@)'
