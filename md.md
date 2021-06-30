@@ -100,3 +100,14 @@ for readability.
 ### Images
 
 ![Image of Xsy](xsy_150.png)
+
+
+## Notes etc
+
+### Notes
+
+Markdown has no specialized syntax for notes.
+
+### Warnings
+
+Markdown has no specialized syntax for warnings.

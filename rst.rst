@@ -129,3 +129,23 @@ Images
 
 .. image:: xsy_150.png
    :alt: Image of Xsy
+
+
+Notes etc
+*********
+
+Notes
+=====
+
+.. note::
+   This is the text of a note.
+
+.. note: GitHub's RST rendering doesn't make this stand out much.
+
+Warnings
+========
+
+.. warning::
+   This is the text of a warning.
+
+.. note: GitHub's RST rendering doesn't make this stand out much.

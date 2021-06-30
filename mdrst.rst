@@ -324,6 +324,47 @@ Images
 
 
 
+Notes etc
+*********
+
+.. list-table::
+   :widths: 15 30 30 15
+   :header-rows: 1
+
+   * - What
+     - Markdown
+     - reStructuredText
+     - Notes
+
+
+   * - Notes
+     - ::
+
+          Markdown has no specialized syntax for notes.
+
+     - ::
+
+          .. note::
+             This is the text of a note.
+
+     -
+
+          GitHub's .rst rendering doesn't make this stand out much.
+
+   * - Warnings
+     - ::
+
+          Markdown has no specialized syntax for warnings.
+
+     - ::
+
+          .. warning::
+             This is the text of a warning.
+
+     -
+
+          GitHub's .rst rendering doesn't make this stand out much.
+
 
 Additional Resources
 ********************
