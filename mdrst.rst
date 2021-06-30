@@ -349,7 +349,7 @@ Notes etc
 
      -
 
-          GitHub's .rst rendering doesn't make this stand out much.
+          GitHub's RST rendering doesn't make this stand out much.
 
    * - Warnings
      - ::
@@ -363,7 +363,7 @@ Notes etc
 
      -
 
-          GitHub's .rst rendering doesn't make this stand out much.
+          GitHub's RST rendering doesn't make this stand out much.
 
 
 Additional Resources
