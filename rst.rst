@@ -8,7 +8,7 @@ Basic Stuff
 Emphasis
 ========
 
-.. note: RST only allows astrisks for emphasis
+.. note: RST only allows asterisks for emphasis
 
 This word is *italicized*.
 
