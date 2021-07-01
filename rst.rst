@@ -15,7 +15,7 @@ This word is *italicized*.
 Strong emphasis
 ===============
 
-.. note: RST only allows astrisks for strong emphasis
+.. note: RST only allows asterisks for strong emphasis
 
 This word is **bold**.
 
