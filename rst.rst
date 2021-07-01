@@ -51,8 +51,6 @@ Lincoln said:
 Lists
 *****
 
-.. note: RST requires extra indentation for list items that span multiple lines or paragraphs, whereas MD does not.
-
 Numbered
 ========
 
