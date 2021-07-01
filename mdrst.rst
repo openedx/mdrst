@@ -78,6 +78,13 @@ Basic Stuff
    * - Code blocks
      - ::
 
+          Look at this output:
+
+          ```
+          $ ls /usr/
+          bin        lib        libexec    local      sbin       share
+          ```
+
           Look at this code:
 
           ```python
@@ -89,6 +96,11 @@ Basic Stuff
           ```
 
      - ::
+
+          Look at this output::
+
+             $ ls /usr/
+             bin        lib        libexec    local      sbin       share
 
           Look at this code:
 

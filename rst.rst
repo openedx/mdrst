@@ -26,6 +26,10 @@ Call the ``function_name`` function.
 
 Code blocks
 ===========
+Look at this output::
+
+   $ ls /usr/
+   bin        lib        libexec    local      sbin       share
 
 Look at this code:
 
