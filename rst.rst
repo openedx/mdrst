@@ -8,10 +8,14 @@ Basic Stuff
 Emphasis
 ========
 
+.. note: RST only allows asterisks for emphasis
+
 This word is *italicized*.
 
 Strong emphasis
 ===============
+
+.. note: RST only allows asterisks for strong emphasis
 
 This word is **bold**.
 
@@ -22,8 +26,14 @@ Call the ``function_name`` function.
 
 Code blocks
 ===========
+Look at this output::
 
-Look at this code::
+   $ ls /usr/
+   bin        lib        libexec    local      sbin       share
+
+Look at this code:
+
+.. code-block:: python
 
     def fib(n):
         if n <= 2:
@@ -103,7 +113,7 @@ Headers
 
 .. parse-headers-off
 
-.. note: The overlines in RST are optional and characters are flexible as long as they are consistent.
+.. note: The overlines and characters are flexible in RST as long as they are consistent.  RST requires strict nesting; even after the hierarchy is established, you can't use, say, a third-tier header right under a first-tier whereas MD allows this.
 
 ############
 First Header

@@ -38,7 +38,7 @@ Basic Stuff
    * - Emphasis
      - ::
 
-          This word is *italicized*.
+          This word is *italicized*, _underscores_ also work
 
      - ::
 
@@ -46,12 +46,13 @@ Basic Stuff
 
      -
 
-
+          RST only allows asterisks for emphasis
 
    * - Strong emphasis
      - ::
 
-          This word is **bold**.
+          This word is **bold**, __underscores__ also work
+          .
 
      - ::
 
@@ -59,7 +60,7 @@ Basic Stuff
 
      -
 
-
+          RST only allows astrisks for strong emphasis
 
    * - Code inline
      - ::
@@ -77,9 +78,16 @@ Basic Stuff
    * - Code blocks
      - ::
 
-          Look at this code:
+          Look at this output:
 
           ```
+          $ ls /usr/
+          bin        lib        libexec    local      sbin       share
+          ```
+
+          Look at this code:
+
+          ```python
           def fib(n):
               if n <= 2:
                   return 1
@@ -89,7 +97,14 @@ Basic Stuff
 
      - ::
 
-          Look at this code::
+          Look at this output::
+
+             $ ls /usr/
+             bin        lib        libexec    local      sbin       share
+
+          Look at this code:
+
+          .. code-block:: python
 
               def fib(n):
                   if n <= 2:
@@ -295,7 +310,7 @@ Headers
 
      -
 
-          The overlines in RST are optional and characters are flexible as long as they are consistent.
+          The overlines and characters are flexible in RST as long as they are consistent.  RST requires strict nesting; even after the hierarchy is established, you can't use, say, a third-tier header right under a first-tier whereas MD allows this.
 
 Images
 ******
@@ -369,7 +384,7 @@ Notes etc
 Additional Resources
 ********************
 
-RST also has many more features.  Check out the official `RST User Documentation`_.
+Both MD and RST have many more features, please add examples you would find useful.  Also check out the official `RST User Documentation`_.
 
 .. _RST User Documentation: http://docutils.sourceforge.net/rst.html
 
