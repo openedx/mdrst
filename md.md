@@ -4,11 +4,12 @@
 
 ### Emphasis
 
-This word is *italicized*.
+This word is *italicized*, _underscores_ also work
 
 ### Strong emphasis
 
-This word is **bold**.
+This word is **bold**, __underscores__ also work
+.
 
 ### Code inline
 
@@ -18,7 +19,7 @@ Call the `function_name` function.
 
 Look at this code:
 
-```
+```python
 def fib(n):
     if n <= 2:
         return 1
