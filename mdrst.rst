@@ -298,7 +298,7 @@ Headers
 
      -
 
-          The overlines and characters are flexible in RST as long as they are consistent.  RST requires strict nesting; even after the hierarchy is established, you can't use, say, a third-tier header right under a first-tier whereas MD allows this.  Also, ``rstcheck`` warns if heading titles are not unique (`see this issue <https://github.com/myint/rstcheck/issues/76>`__)
+          The overlines and characters are flexible in RST as long as they are consistent.  RST requires strict nesting; even after the hierarchy is established, you can't use, say, a third-tier header right under a first-tier whereas MD allows this.
 
 Images
 ******
