@@ -60,7 +60,7 @@ Basic Stuff
 
      -
 
-          RST only allows astrisks for strong emphasis
+          RST only allows asterisks for strong emphasis
 
    * - Code inline
      - ::
