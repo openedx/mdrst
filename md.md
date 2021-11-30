@@ -119,3 +119,4 @@ Markdown has no specialized syntax for notes.
 ### Warnings
 
 Markdown has no specialized syntax for warnings.
+
