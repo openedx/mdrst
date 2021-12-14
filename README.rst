@@ -25,8 +25,8 @@ The convert.py tool reads those two files, and produces:
 
 To run the tool::
 
-   $ python3.6 -m pip install -r requirements.txt
-   $ python3.6 convert.py
+   $ python3.8 -m pip install -r requirements.txt
+   $ python3.8 convert.py
 
 .. _md.md: https://github.com/edx/mdrst/blob/master/md.md
 .. _rst.rst: https://github.com/edx/mdrst/blob/master/rst.rst
