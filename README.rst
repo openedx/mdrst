@@ -31,4 +31,3 @@ To run the tool::
 .. _md.md: https://github.com/edx/mdrst/blob/master/md.md
 .. _rst.rst: https://github.com/edx/mdrst/blob/master/rst.rst
 .. _mdrst.rst: https://github.com/edx/mdrst/blob/master/mdrst.rst
-
