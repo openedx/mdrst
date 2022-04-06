@@ -8,7 +8,7 @@ This word is *italicized*, _underscores_ also work
 
 ### Strong emphasis
 
-This word is **bold**, __underscores__ also work, and _markup **can** be nested_.
+This word is **bold** and *markup __can__ be nested*.
 
 ### Code inline
 

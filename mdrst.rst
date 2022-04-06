@@ -51,7 +51,7 @@ Basic Stuff
    * - Strong emphasis
      - ::
 
-          This word is **bold**, __underscores__ also work, and _markup **can** be nested_.
+          This word is **bold** and *markup __can__ be nested*.
 
      - ::
 
