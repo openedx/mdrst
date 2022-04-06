@@ -8,14 +8,14 @@ Basic Stuff
 Emphasis
 ========
 
-.. note: RST only allows asterisks for emphasis
+.. note: RST only allows asterisks for emphasis and strong emphasis.
 
 This word is *italicized*.
 
 Strong emphasis
 ===============
 
-.. note: RST only allows asterisks for strong emphasis
+.. note: RST cannot nest inline markup, so there is no way to have an emphasized sentence with a strongly emphasized word, nor a link in strongly emphasized text, for example.
 
 This word is **bold**.
 

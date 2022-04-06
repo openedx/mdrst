@@ -46,13 +46,12 @@ Basic Stuff
 
      -
 
-          RST only allows asterisks for emphasis
+          RST only allows asterisks for emphasis and strong emphasis.
 
    * - Strong emphasis
      - ::
 
-          This word is **bold**, __underscores__ also work
-          .
+          This word is **bold** and *markup __can__ be nested*.
 
      - ::
 
@@ -60,7 +59,7 @@ Basic Stuff
 
      -
 
-          RST only allows asterisks for strong emphasis
+          RST cannot nest inline markup, so there is no way to have an emphasized sentence with a strongly emphasized word, nor a link in strongly emphasized text, for example.
 
    * - Code inline
      - ::
