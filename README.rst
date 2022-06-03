@@ -6,7 +6,7 @@ Open edX uses ReStructured Text (RST) for its documentation.  People have told
 us they are unfamiliar with RST, and that a comparison of the two would be
 welcome.
 
-The cheatsheet: `mdrst.rst`_.
+The cheatsheet: `mdrst.rst`_.asdasdasdasd
 
 I started by editing a document with side-by-side examples of both Markdown and
 RST, but it was difficult to edit, and difficult to know that I had gotten all
