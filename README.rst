@@ -28,6 +28,6 @@ To run the tool::
    $ python3.8 -m pip install -r requirements.txt
    $ python3.8 convert.py
 
-.. _md.md: https://github.com/edx/mdrst/blob/master/md.md
-.. _rst.rst: https://github.com/edx/mdrst/blob/master/rst.rst
-.. _mdrst.rst: https://github.com/edx/mdrst/blob/master/mdrst.rst
+.. _md.md: https://github.com/openedx/mdrst/blob/master/md.md
+.. _rst.rst: https://github.com/openedx/mdrst/blob/master/rst.rst
+.. _mdrst.rst: https://github.com/openedx/mdrst/blob/master/mdrst.rst
