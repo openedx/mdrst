@@ -1,5 +1,5 @@
 ################################
-Markdown-to-RST Cheatsheet Maker
+Markdown-to-RST Cheatsheet Make
 ################################
 
 Open edX uses ReStructured Text (RST) for its documentation.  People have told
