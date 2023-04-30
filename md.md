@@ -115,6 +115,12 @@ for readability.
 
 Markdown has no specialized syntax for notes.
 
+### Footnotes
+
+Extended version of markdown does support footnotes[^1].
+
+[^1]: The footnote will mostly be displayed in the bottom no matter where you define it, hence _the name_.
+
 ### Warnings
 
 Markdown has no specialized syntax for warnings.

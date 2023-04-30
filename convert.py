@@ -236,7 +236,7 @@ def md_to_html(md_text):
     ]
     html_text = markdown2.markdown(
         md_text,
-        extras=['fenced-code-blocks', 'link-patterns'],
+        extras=['fenced-code-blocks', 'link-patterns', 'footnotes'],
         link_patterns=link_patterns,
     )
     return html_text

@@ -365,6 +365,23 @@ Notes etc
 
           GitHub's RST rendering doesn't make this stand out much.
 
+   * - Footnotes
+     - ::
+
+          Extended version of markdown does support footnotes[^1].
+
+          [^1]: The footnote will mostly be displayed in the bottom no matter where you define it, hence _the name_.
+
+     - ::
+
+          An example of footnote [1]_.
+
+          .. [1] It's similar to hyperlink syntax.
+
+     -
+
+
+
    * - Warnings
      - ::
 
