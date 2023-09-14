@@ -8,10 +8,6 @@ welcome.
 
 The cheatsheet: `mdrst.rst`_.
 
-I started by editing a document with side-by-side examples of both Markdown and
-RST, but it was difficult to edit, and difficult to know that I had gotten all
-of the details right.
-
 In this repo are two files: `md.md`_ and `rst.rst`_.  They have parallel
 heading structures, each showing how their format represents each construct.
 Together, they produce `mdrst.rst`_, which shows the examples side-by-side.

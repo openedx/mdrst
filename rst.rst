@@ -29,7 +29,7 @@ Code blocks
 Look at this output::
 
    $ ls /usr/
-   bin        lib        libexec    local      sbin       share
+   bin        lib        libexec
 
 Look at this code:
 

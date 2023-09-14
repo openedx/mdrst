@@ -81,7 +81,7 @@ Basic Stuff
 
           ```
           $ ls /usr/
-          bin        lib        libexec    local      sbin       share
+          bin        lib        libexec
           ```
 
           Look at this code:
@@ -99,7 +99,7 @@ Basic Stuff
           Look at this output::
 
              $ ls /usr/
-             bin        lib        libexec    local      sbin       share
+             bin        lib        libexec
 
           Look at this code:
 
@@ -368,9 +368,10 @@ Notes etc
    * - Footnotes
      - ::
 
-          Extended version of markdown does support footnotes[^1].
+          Extended Markdown supports footnotes[^1].
 
-          [^1]: The footnote will mostly be displayed in the bottom no matter where you define it, hence _the name_.
+          [^1]: The footnote will mostly be displayed in the bottom
+          no matter where you define it, hence _the name_.
 
      - ::
 
